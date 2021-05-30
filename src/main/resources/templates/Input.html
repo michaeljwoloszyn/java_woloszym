@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <title>Input</title>
 </head>
 <body>
-
+<h1>Input</h1>
+<h2>Please enter your name</h2>
+<form action="Output.html" th:action="@{Output}">
+    <p>
+        <input id="n">
+        <label for="n">Name</label>
+    </p>
+    <p>Status:</p>
+    <p>
+        <input type="radio" id="faculty" name="position" value="faculty">
+        <label for="faculty">Faculty</label><br>
+        <input type="radio" id="staff" name="position" value="staff">
+        <label for="staff">Staff</label><br>
+    <p>
+        <input type="submit" value="Send">
+    </p>
+</form>
 </body>
 </html>
