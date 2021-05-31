@@ -2,7 +2,7 @@ package sheridan.woloszym.exercise1v1.domain;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class User implements java.io.Serializable {
 
     private String name = "";
     private String status = "";

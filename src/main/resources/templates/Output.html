@@ -8,14 +8,10 @@
 <body>
     <h1>Output</h1>
     <p>
-        <label>
-            Name:
-        </label>
+        Name:<span th:text="${user.getName()}"></span>
     </p>
     <p>
-        <label>
-            Status:
-        </label>
+        Status:<span th:text="${user.getStatus()}"></span>
     </p>
     <p>
         <a href="Input.html" th:href="@{Input}">Back</a>

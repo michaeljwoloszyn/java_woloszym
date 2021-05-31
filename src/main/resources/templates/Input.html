@@ -7,22 +7,22 @@
 </head>
 <body>
 <h1>Input</h1>
-<h2>Please enter your name</h2>
-<form action="Output.html" th:action="@{Output}">
-    <p>
-        <input id="n">
-        <label for="n">Name</label>
-    </p>
-    <p>Status:</p>
-    <p>
-        <input type="radio" id="faculty" name="position" value="faculty">
-        <label for="faculty">Faculty</label><br>
-        <input type="radio" id="staff" name="position" value="staff">
-        <label for="staff">Staff</label><br>
-    </p>
-    <p>
+<h3>Please enter your name</h3>
+<form action="Output.html" th:action="@{Output}" th:object="${user}">
+    <div>
+        <label for="n">Name:</label>
+        <input id="n" th:field="*{name}">
+    </div>
+    <h3>Please enter status</h3>
+    <div>
+        <label for="f">Faculty</label>
+        <input type="radio" id="f" th:field="*{status}" value="faculty"><br>
+        <label for="s">Staff</label>
+        <input type="radio" id="s" th:field="*{status}" value="staff"><br><br>
+    </div>
+    <div>
         <input type="submit" value="Send">
-    </p>
+    </div>
 </form>
 </body>
 </html>
