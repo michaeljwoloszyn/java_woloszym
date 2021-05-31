@@ -14,5 +14,4 @@ public class InputController {
         model.addAttribute("user", user);
         return "Input";
     }
-
 }
