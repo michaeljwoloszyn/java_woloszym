@@ -15,6 +15,7 @@ public class User implements java.io.Serializable {
         this.status = status;
     }
 
+
     public String getName() {
         return name;
     }

@@ -9,16 +9,26 @@
 <h1>Input</h1>
 <h3>Please enter your name</h3>
 <form action="Output.html" th:action="@{Output}" th:object="${user}">
+    <div th:if="${#fields.hasErrors('*')}">
+        <h3 class="error">Input Errors</h3>
+        <ul>
+            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+        </ul>
+    </div>
     <div>
         <label for="n">Name:</label>
-        <input id="n" th:field="*{name}">
+        <input id="n" th:field="*{name}" required>
     </div>
     <h3>Please enter status</h3>
     <div>
-        <label for="f">Faculty</label>
-        <input type="radio" id="f" th:field="*{status}" value="Faculty"><br>
-        <label for="s">Staff</label>
-        <input type="radio" id="s" th:field="*{status}" value="Staff"><br><br>
+        <label>
+            Faculty
+            <input type="radio" id="f" name="status" th:field="*{status}" value="Faculty" checked="checked" required> <br>
+        </label>
+        <label>
+            Staff
+            <input type="radio" id="s" name="status" th:field="*{status}" value="Staff" required><br><br>
+        </label>
     </div>
     <div>
         <input type="submit" value="Send">
